@@ -50,4 +50,4 @@ RUN \
 		/var/lib/apt/lists/* \
 		/usr/src/*
 
-ENTRYPOINT ["gmad"]
+ENTRYPOINT ["gmad_linux"]
