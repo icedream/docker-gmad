@@ -1,0 +1,28 @@
+From 5edfb090a3632c26e6d3f1e60ed30e7bd3ea11ca Mon Sep 17 00:00:00 2001
+From: Carl Kittelberger <icedream@icedream.pw>
+Date: Mon, 17 Apr 2017 22:57:57 +0200
+Subject: [PATCH 2/2] Add missing parameter in wait() call.
+
+---
+ src/Bootil/Platform/Platform_LINUX.cpp | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/src/Bootil/Platform/Platform_LINUX.cpp b/src/Bootil/Platform/Platform_LINUX.cpp
+index 3157e81..bb927e0 100644
+--- a/src/Bootil/Platform/Platform_LINUX.cpp
++++ b/src/Bootil/Platform/Platform_LINUX.cpp
+@@ -221,8 +221,10 @@ namespace Bootil
+ 			{
+ 				bool isOk = ( pid > 0 );
+ 
++				int status;
++
+ 				if ( isOk && AndWait )
+-				{ wait(); }
++				{ wait(&status); }
+ 			}
+ 			else
+ 			{
+-- 
+2.10.0.windows.1
+

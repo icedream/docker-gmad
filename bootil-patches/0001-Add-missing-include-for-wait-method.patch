@@ -1,0 +1,24 @@
+From 51b3af93a29ad39514698d9263b9685d0e8f5eea Mon Sep 17 00:00:00 2001
+From: Carl Kittelberger <icedream@icedream.pw>
+Date: Mon, 17 Apr 2017 22:45:26 +0200
+Subject: [PATCH 1/2] Add missing #include for wait() method.
+
+---
+ src/Bootil/Platform/Platform_LINUX.cpp | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/Bootil/Platform/Platform_LINUX.cpp b/src/Bootil/Platform/Platform_LINUX.cpp
+index 35b7e98..3157e81 100644
+--- a/src/Bootil/Platform/Platform_LINUX.cpp
++++ b/src/Bootil/Platform/Platform_LINUX.cpp
+@@ -15,6 +15,7 @@
+ #include <cstdlib>
+ #include <unistd.h>
+ #include <sys/types.h>
++#include <sys/wait.h>
+ #include <sys/time.h>
+ #include <sys/select.h>
+ 
+-- 
+2.10.0.windows.1
+
